@@ -4,12 +4,13 @@ import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 import ThemeMode from './components/ThemeMode';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   // Link
-// } from 'react-router-dom';
+import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from 'react-router-dom';
 
 function App() {
   const [themeColor, setTheme] = useState('light');
@@ -61,19 +62,17 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
-
+      <Router>
         <Navbar title="TextUtils" themeColor={themeColor} toggleThemeColor={toggleThemeColor} colorAndTheme={colorAndTheme} />
         {/* <Navbar title="TextUtils"/> */}
-
         <Alert alert={alert} />
-
-          {/* <Routes> */}
-            {/* <Route exact path='/' element={ <TextForm heading="Enter the text to analyze" themeColor={themeColor} colorAndTheme={colorAndTheme} />} /> */}
-          {/* </Routes> */}
-              <TextForm heading="Enter the text to analyze" themeColor={themeColor} colorAndTheme={colorAndTheme} />
-      {/* </Router> */}
-      {/* <ThemeMode toggleThemeColor={toggleThemeColor} colorAndTheme={colorAndTheme} /> */}
+        <Routes>
+          <Route exact path='/' element={<TextForm heading="Enter the text to analyze" themeColor={themeColor} colorAndTheme={colorAndTheme} />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+        {/* <TextForm heading="Enter the text to analyze" themeColor={themeColor} colorAndTheme={colorAndTheme} /> */}
+      </Router>
+      <ThemeMode toggleThemeColor={toggleThemeColor} colorAndTheme={colorAndTheme} />
     </>
   );
 }
