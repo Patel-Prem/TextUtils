@@ -3,10 +3,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
-import ThemeMode from './components/ThemeMode';
 // import About from './components/About';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faHouse } from '@awesome.me/kit-KIT_CODE/icons/classic/solid'
 
 import {
   BrowserRouter as Router,
